@@ -1,6 +1,18 @@
 import sys
 
-n=int(sys.argv[1])
+if len(sys.argv)<2:
+    print("Lūdzu, ievadi skaitli!")
+    exit()
+
+try:
+    n=int(sys.argv[1])
+except ValueError:
+    print("Lūdzu, ievadi skaitli!")
+    exit()
+
+if n<=0:
+    print("Lūdzu, ievadi pozitīvu skaitli!")
+    exit()
 
 for a in range(1, n+1): #n+1, tā kā range neiekļautu n, bet gan beigtos ar n-1
     if a%3==0 and a%5==0 and a%7==0:
